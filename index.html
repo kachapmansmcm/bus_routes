@@ -26,11 +26,13 @@
     <section>
       <div class="container">
           <div class="section-title">
-              <h2>Eyes Exercise</h2>    
+              <h2>Boston Live Bus Tracker</h2>    
           </div>
           <div class="row">
               <div class="col-lg-12">
-                <p class="fst-italic">This project will track the user's mouse movements aound the screen, and use CSS and styling to have the pupils follow the movements</p>
+                <p class="fst-italic">This project calls the API from mbta.com to get a live feed of one of the bus routes in Boston.  When turned on the map will update every 15 seconds.
+                  clicking on a bus icon will pop an alert with at little more information onthe individual bus.
+                </p>
               </div>
           </div>
         </div>
@@ -48,7 +50,7 @@
    
 
 <script>
-
+//controls wheteher the map is updating or not.
 var isRunning = false;
 var busLocations = [];
 var interval = null;
@@ -68,7 +70,7 @@ function startStop(){
     interval = setInterval(run, 15000);
   }
 }
-
+//pulls pulls the bus locations and call the function to create markers.
 async function run(){
     const locations = await getBusLocations();
     busLocations = [];
@@ -86,8 +88,7 @@ async function getBusLocations(){
 }
 
 
-
-// TODO: add your own access token
+//add your own access token
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2FjaGFwbWFuIiwiYSI6ImNrbmdma3hzbDFzbTgycG1pcTVwazZ4czgifQ.ze5RjH8T0sB7WA-XgdPA8w';
 
 // This is the map instance
@@ -99,8 +100,7 @@ let map = new mapboxgl.Map({
 });
 
 
-// TODO: add a marker to the map at the first coordinates in the array busStops. The marker variable should be named "marker"
-
+//take the Array of JSON from the api and turns them into map markers
 var markerArray = []
 function createMarkers(busLocations){
   //clear the map before making new icons
@@ -111,6 +111,10 @@ function createMarkers(busLocations){
     busIcon.className = 'fas fa-bus fa-2x';
     busIcon.style.color = "red";
     busIcon.title = element.id;
+    let message = createAlert(element);
+    busIcon.addEventListener('click', function () {
+      window.alert(message);
+      });
     let lat = element.attributes.latitude;
     let long = element.attributes.longitude;
     let marker = new mapboxgl.Marker({element: busIcon})
@@ -120,9 +124,23 @@ function createMarkers(busLocations){
     markerArray.push(marker);
   })
 }
+//creates a quick popup alert for each bus.
+function createAlert(element){
+  let status = element.attributes.current_status;
+  let stop_id = element.relationships.stop.data.id;
+  let busNum = element.id;
+  let occupancy = element.attributes.occupancy_status;
+
+  let message = `
+  Bus Number: ${busNum}
+  Current Status: ${status}
+  Stop: ${stop_id}
+  Occupancy: ${occupancy}`;
+
+  return message;
+}
 
 
-// counter here represents the index of the current bus stop
 
 </script>
 </html> 
