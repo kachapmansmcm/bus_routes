@@ -50,8 +50,12 @@
 [![product-screenshot]](https://kachapmansmcm.github.io/bus_routes/)
 
 For this project we were tasked with interacting with an API from the Massachusetts Bay Transportation Authority. From this API we created a live Map of a bus route in Boston.
-
-
+Project Requirements:
+* Render a map of Boston from MapBoxGL
+* Make an API call to MBTA to pull the vehicle data for Bus Route id=1
+* Parse the returned json data to get the longitude and latitude of each bus
+* Use that data to create bus markers on the map
+* have the map update the bus locations every 15 seconds.
 
 ### Built With
 
