@@ -76,7 +76,7 @@ This is a simple webpage that can be hosted from any basic HTTP server.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This is a Github pages website to showcase your Projects.
+This is a Github pages website to demonstrate accessing data from an API.
 
 * To start the this tracker click the "Start Live Bus Updates" Button
 * The Tracker will the poll the API and update every 15 seconds.
