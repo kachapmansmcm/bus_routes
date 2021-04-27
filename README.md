@@ -37,6 +37,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -49,8 +50,12 @@
 [![product-screenshot]](https://kachapmansmcm.github.io/bus_routes/)
 
 For this project we were tasked with interacting with an API from the Massachusetts Bay Transportation Authority. From this API we created a live Map of a bus route in Boston.
-
-
+Project Requirements:
+* Render a map of Boston from MapBoxGL
+* Make an API call to MBTA to pull the vehicle data for Bus Route id=1
+* Parse the returned json data to get the longitude and latitude of each bus
+* Use that data to create bus markers on the map
+* have the map update the bus locations every 15 seconds.
 
 ### Built With
 
@@ -71,6 +76,7 @@ This is a simple webpage that can be hosted from any basic HTTP server.
 ### Installation
 
 1. Clone into Github Pages
+2. replace my Mapboxgl token with your own.
 
 
 <!-- USAGE EXAMPLES -->
@@ -82,6 +88,12 @@ This is a Github pages website to demonstrate accessing data from an API.
 * The Tracker will the poll the API and update every 15 seconds.
 * To stop the tracker click the "Stop Live Bus Updates" Button.
 
+<!-- ROADMAP -->
+## Roadmap
+
+Changes I would like to make to this project in the future are:
+* I would like to add more bus routes
+* I would like to be able to get all of the Names of the bus stops rather than their ID's
 
 
 <!-- LICENSE -->
