@@ -74,7 +74,8 @@ This is a simple webpage that can be hosted from any basic HTTP server.
 ## Usage
 
 This is a Github pages website to showcase your Projects.
-To start the tbis tracker click the "Start Live Bus Updates" Button
+
+To start the this tracker click the "Start Live Bus Updates" Button
 
 
 
