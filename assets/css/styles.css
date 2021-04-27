@@ -107,15 +107,6 @@ p {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  #header.header-top {
-    height: 60px;
-  }
-  #header.header-top h1 {
-    font-size: 26px;
-  }
-}
-
 .navbar {
   padding: 0;
   margin-top: 35px;
