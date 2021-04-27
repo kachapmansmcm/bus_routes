@@ -55,6 +55,7 @@ For this project we were tasked with interacting with an API from the Massachuse
 ### Built With
 
 * [Bootstrap](https://getbootstrap.com)
+* [MapBoxGl](https://www.mapbox.com/mapbox-gljs)
 
 
 
@@ -63,6 +64,8 @@ For this project we were tasked with interacting with an API from the Massachuse
 ## Getting Started
 
 This is a simple webpage that can be hosted from any basic HTTP server.
+* You will need to optain an access token from MapBoxGL by creating an account.
+
 
 
 ### Installation
@@ -75,7 +78,9 @@ This is a simple webpage that can be hosted from any basic HTTP server.
 
 This is a Github pages website to showcase your Projects.
 
-To start the this tracker click the "Start Live Bus Updates" Button
+* To start the this tracker click the "Start Live Bus Updates" Button
+* The Tracker will the poll the API and update every 15 seconds.
+* To stop the tracker click the "Stop Live Bus Updates" Button.
 
 
 
